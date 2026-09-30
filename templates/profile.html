@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Manager - Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+</head>
+
+<body>
+    <button onclick="window.location.href='/'">Back</button>
+    <div class="profile-data">
+        <h1>PROFILE</h1>
+
+        <div class="profile-item">
+            <span>Name</span>
+            <strong>{{ user.name }}</strong>
+        </div>
+
+        <div class="profile-item">
+            <span>Roll No</span>
+            <strong>{{ user.roll_no }}</strong>
+        </div>
+
+        <div class="profile-item">
+            <span>Email</span>
+            <strong>{{ user.email }}</strong>
+        </div>
+
+        <div class="profile-item">
+            <span>Branch</span>
+            <strong>{{ user.branch }}</strong>
+        </div>
+
+        <div class="profile-item">
+            <span>Year</span>
+            <strong>{{ user.u_year }}</strong>
+        </div>
+
+        <div class="profile-item">
+            <span>Favourite Category</span>
+            <strong>{{ user.fav_cat }}</strong>
+        </div>
+
+    </div>
+    <div class="remind">
+        <h2>Your Reminders</h2>
+        <table class="remind-table">
+
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% if reminder %}
+                {% for r in reminder %}
+                <tr>
+                    <td>{{ r.event.title }}</td>
+                    <td>{{ r.event.event_date }}</td>
+                    <td><a href="/delete-reminder/{{r.event.event_id}}">Delete</a></td>
+                </tr>
+                {% endfor %}
+                {% else %}
+                <tr>
+                    <td colspan="3">No reminders set.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <a href="/logout" class="logout-btn" >
+     Logout
+    </a>
+
+</body>
+
+</html>

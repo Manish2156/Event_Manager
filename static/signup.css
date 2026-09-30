@@ -1,0 +1,455 @@
+/* =====================================================
+   COLLEGE EVENT MANAGER
+   SIGNUP PAGE
+   Green + White Modern Theme
+   ===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(34, 197, 94, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(22, 101, 52, 0.10),
+            transparent 30%
+        ),
+        #f6f8f5;
+
+    color: #18301f;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 20px;
+}
+
+
+/* =====================================================
+   SIGNUP FORM CARD
+===================================================== */
+
+.user_info {
+    width: 100%;
+    max-width: 560px;
+
+    padding: 45px 48px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #dfe9df;
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 20px 60px rgba(35, 80, 45, 0.10),
+        0 4px 15px rgba(35, 80, 45, 0.04);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Green top line */
+
+.user_info::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #14532d,
+            #22c55e,
+            #86efac
+        );
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.user_info h1 {
+    color: #14532d;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    letter-spacing: -0.6px;
+
+    margin-bottom: 5px;
+}
+
+
+/* Little green dot */
+
+.user_info h1::before {
+    content: "";
+
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    margin-right: 9px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    vertical-align: middle;
+
+    box-shadow:
+        0 0 0 5px rgba(34, 197, 94, 0.10);
+}
+
+
+/* Subtitle */
+
+.user_info .subtitle {
+    margin-bottom: 32px;
+
+    color: #77827a;
+
+    font-size: 0.92rem;
+}
+
+
+/* =====================================================
+   LABELS
+===================================================== */
+
+.user_info > label {
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    color: #294631;
+
+    font-size: 0.9rem;
+
+    font-weight: 650;
+}
+
+
+/* =====================================================
+   TEXT INPUTS
+===================================================== */
+
+.user_info input[type="text"],
+.user_info input[type="email"],
+.user_info input[type="password"] {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 15px;
+
+    border: 1px solid #d7e1d7;
+
+    border-radius: 11px;
+
+    background: #fbfdfb;
+
+    color: #19351f;
+
+    font-family: inherit;
+
+    font-size: 0.94rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.user_info input::placeholder {
+    color: #a0aaa2;
+}
+
+
+/* Input focus */
+
+.user_info input[type="text"]:focus,
+.user_info input[type="email"]:focus,
+.user_info input[type="password"]:focus {
+
+    background: #ffffff;
+
+    border-color: #22a653;
+
+    box-shadow:
+        0 0 0 4px rgba(34, 197, 94, 0.11);
+}
+
+
+/* =====================================================
+   SELECT DROPDOWNS
+===================================================== */
+
+.user_info select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 42px 0 15px;
+
+    border: 1px solid #d7e1d7;
+
+    border-radius: 11px;
+
+    background-color: #fbfdfb;
+
+    color: #294631;
+
+    font-family: inherit;
+
+    font-size: 0.94rem;
+
+    cursor: pointer;
+
+    outline: none;
+
+    appearance: none;
+
+    /* Custom arrow */
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #4f6f57 50%),
+        linear-gradient(135deg, #4f6f57 50%, transparent 50%);
+
+    background-position:
+        calc(100% - 18px) 20px,
+        calc(100% - 13px) 20px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.user_info select:focus {
+
+    background-color: #ffffff;
+
+    border-color: #22a653;
+
+    box-shadow:
+        0 0 0 4px rgba(34, 197, 94, 0.11);
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.user_info button {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 30px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #166534,
+            #15803d
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.98rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 22px rgba(22, 101, 52, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.user_info button:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #14532d,
+            #166534
+        );
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 28px rgba(22, 101, 52, 0.27);
+}
+
+
+.user_info button:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 7px 15px rgba(22, 101, 52, 0.18);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+
+    .user_info {
+
+        padding: 38px 25px;
+
+        border-radius: 21px;
+    }
+
+
+    .user_info h1 {
+
+        font-size: 1.65rem;
+    }
+
+
+    .user_info .subtitle {
+
+        margin-bottom: 25px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 400px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+
+    .user_info {
+
+        padding: 35px 20px;
+
+        border-radius: 18px;
+    }
+
+
+    .user_info h1 {
+
+        font-size: 1.45rem;
+    }
+
+
+    .user_info input[type="text"],
+    .user_info input[type="email"],
+    .user_info input[type="password"],
+    .user_info select {
+
+        height: 46px;
+    }
+}
+
+/* Already have an account */
+
+.already-account {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #7a877d;
+
+    font-size: 0.88rem;
+}
+
+.already-account a {
+    color: #166534;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.already-account a:hover {
+    color: #22a653;
+
+    text-decoration: underline;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Event - College Event Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/create-event.css') }}">
+</head>
+
+<body>
+
+
+    <div class="addevent">
+
+        <h2>Create Event</h2>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+
+            <label for="event-name">Event Title</label>
+            <input type="text" id="event-name" name="event-name" required>
+
+
+            <label for="event-desc">Event Description</label>
+            <textarea id="event-desc" name="event-desc" rows="5" required></textarea>
+
+
+            <label for="event-date">Event Date</label>
+            <input type="date" id="event-date" name="event-date" required>
+
+
+            <label for="event-time">Event Time</label>
+            <input type="time" id="event-time" name="event-time" required>
+
+
+            <label for="event-cat">Event Category</label>
+
+            <select id="event-cat" name="event-cat" required>
+                <option value="" disabled selected>
+                    Select category
+                </option>
+
+                <option value="Arts">Arts</option>
+                <option value="History">History</option>
+                <option value="Literature">Literature</option>
+                <option value="Hackathon">Hackathon</option>
+                <option value="Seminars">Seminars</option>
+                <option value="Workshop">Workshop</option>
+            </select>
+
+
+            <label for="event-image">Event Image</label>
+
+            <input type="file" id="event-image" name="event-image" accept="image/*">
+
+
+            <label for="event-venue">Event Venue</label>
+            <input type="text" id="event-venue" name="event-venue" required>
+
+
+            <label for="event-faculty">Contact Faculty</label>
+            <input type="text" id="event-faculty" name="event-faculty" required>
+
+
+            <label for="event-deadline">Join Before Date</label>
+            <input type="date" id="event-deadline" name="event-deadline" required>
+
+
+            <label for="event-duration">Event Duration</label>
+            <input type="text" id="event-duration" name="event-duration" placeholder="e.g. 2 hours" required>
+
+
+            <button type="submit">
+                Add Event
+            </button>
+
+        </form>
+
+    </div>
+
+
+</body>
+
+</html>

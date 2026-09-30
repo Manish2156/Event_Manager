@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='alleventpg.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>COLLEGE EVENT MANAGER</h1>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav id="main-nav">
+            <a href="/">Home</a>
+            <a href="/events" class="active">Events</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact Us</a>
+            {%if userin%}
+            <a href="/profile">Profile</a>
+            {%else%}
+            <a href="/signup">SignUp</a>
+            {%endif%}
+        </nav>
+    </header>
+    <section class="category-side-scroll">
+        <a href="">Technical</a>
+        <a href="">Cultural</a>
+        <a href="">Sports</a>
+        <a href="">Literature</a>
+        <a href="">Arts</a>
+        <a href="">Music & Dance</a>
+        <a href="">Workshops</a>
+        <a href="">Seminars</a>
+    </section>
+
+    <section class="allevent-section">
+        <h2 class="section-name">All Events</h2>
+        {% for event in events%}
+        <a href="/eventpage/{{event.event_id}}">
+
+            <div class="allevent-board">
+                <img src="{{ url_for('static', filename=event.image) }}" alt="{{event.title}}">
+                <h3>{{event.title}}</h3>
+                <p>{{event.description}}</p>
+                <div class="event-meta">
+                    <p class="event-category">
+                        Category : {{event.category}}
+                    </p>
+
+                    <p class="event-date">
+                        Date : {{event.event_date}}
+                    </p>
+                </div>
+            </div>
+
+        </a>
+        {%endfor%}
+
+
+
+
+    </section>
+
+
+
+
+    <footer>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+
+        <p>
+            Address: Lorem ipsum...
+        </p>
+
+        <p>
+            Email: xyz@gmail.com
+        </p>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const header = document.querySelector("header");
+
+        menuToggle.addEventListener("click", () => {
+            header.classList.toggle("mobile-menu-open");
+
+            if (header.classList.contains("mobile-menu-open")) {
+                menuToggle.textContent = "✕";
+                menuToggle.setAttribute("aria-label", "Close menu");
+            } else {
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-label", "Open menu");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

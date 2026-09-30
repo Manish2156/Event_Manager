@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - College Event Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/dashboard.css') }}">
+
+<body>
+
+
+    <header>
+        <h1>COLLEGE EVENT MANAGER </h1>
+
+        <nav>
+            <a href="/admin/dashboard">Dashboard</a>
+            <a href="/admin/create-event">Create Event</a>
+            <a href="/admin/manage-event">Manage Events</a>
+            <a href="/admin/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Admin Dashboard</h2>
+
+        <section class="stats-grid">
+            <div class="stats-card">
+                <h3>Total Events</h3>
+                <h4>{{total_events}}</h4>
+            </div>
+            <div class="stats-card">
+                <h3>Upcoming Events</h3>
+                <h4>{{upcoming}}</h4>
+            </div>
+            <div class="stats-card">
+                <h3>Ongoing Events</h3>
+                <h4>{{ongoing}}</h4>
+            </div>
+            <div class="stats-card">
+                <h3>Past Events</h3>
+                <h4>{{complete}}</h4>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <h2>Quick Action</h2>
+            <div class="quick-btns">
+                <a href="/admin/create-event" class="quick-btn">
+                    + Create Event
+
+                </a>
+
+                <a href="/admin/manage-event" class="quick-btn">
+                    Manage Event
+                </a>
+            </div>
+        </section>
+
+        <section class="recent">
+            <h2>Recently Added Events</h2>
+            <div class="recent-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Event Name
+                            </th>
+                            <th>
+                                Event Date
+                            </th>
+                            <th>
+                                Event Category
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for event in recent_events%}
+                        <tr>
+                            <td>{{event.title}}</td>
+                            <td>{{event.event_date}}</td>
+                            <td>{{event.category}}</td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+
+
+    </main>
+
+</body>
+
+</html>

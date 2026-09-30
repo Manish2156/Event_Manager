@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/manage-event.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>COLLEGE EVENT MANAGER </h1>
+
+        <nav>
+            <a href="/admin/dashboard">Dashboard</a>
+            <a href="/admin/create-event">Create Event</a>
+            <a href="/admin/manage-event">Manage Events</a>
+            <a href="/admin/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Manage Events</h2>
+
+        <section class="all-event-tables">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>View</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for events in event %}
+                    <tr>
+                        <td>{{events.title}}</td>
+                        <td>{{events.event_date}}</td>
+                        <td>{{events.category}}</td>
+
+                        <td>
+                            <a href="/admin/view-event/{{events.event_id}}">
+                                View
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="/admin/edit-event/{{events.event_id}}">
+                                Edit
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="/admin/delete-event/{{events.event_id}}">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {%endfor%}
+                    
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

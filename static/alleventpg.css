@@ -1,0 +1,473 @@
+/* =========================================
+   ALL EVENTS PAGE
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f6f8f5;
+    color: #18301f;
+}
+
+
+/* =========================================
+   ALL EVENTS SECTION
+   ========================================= */
+
+.allevent-section {
+    width: 86%;
+    max-width: 1100px;
+
+    margin: 60px auto 100px;
+}
+
+
+/* =========================================
+   SECTION TITLE
+   ========================================= */
+
+.allevent-section .section-name {
+    margin-bottom: 30px;
+
+    color: #17351f;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+.allevent-section .section-name::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 4px;
+
+    margin-top: 9px;
+
+    border-radius: 10px;
+
+    background: #22c55e;
+}
+
+
+/* =========================================
+   EVENT LINK
+   ========================================= */
+
+.allevent-section>a {
+    display: block;
+
+    margin-bottom: 22px;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.allevent-section>a:visited {
+    color: inherit;
+}
+
+.allevent-section>a:hover {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   ALL EVENT BOARD
+   ========================================= */
+
+.allevent-board {
+    width: 100%;
+    min-height: 185px;
+
+    display: grid;
+
+    grid-template-columns: 200px 1fr auto;
+    grid-template-rows: auto 1fr auto;
+
+    column-gap: 28px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7df;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 18px rgba(35, 80, 45, 0.05);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+   ========================================= */
+
+.allevent-board:hover {
+    transform: translateY(-3px);
+
+    border-color: #b9d6bd;
+
+    box-shadow:
+        0 11px 28px rgba(35, 80, 45, 0.09);
+}
+
+
+/* =========================================
+   EVENT IMAGE
+   ========================================= */
+
+.allevent-board img {
+    grid-column: 1;
+    grid-row: 1 / 4;
+
+    width: 200px;
+    height: 145px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    background: #edf5ee;
+
+    border: 1px solid #d8e6da;
+}
+
+
+/* =========================================
+   EVENT TITLE
+   ========================================= */
+
+.allevent-board h3 {
+    grid-column: 2;
+    grid-row: 1;
+
+    margin: 3px 0 9px;
+
+    color: #174a27;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+}
+
+
+/* =========================================
+   EVENT DESCRIPTION
+   ========================================= */
+
+.allevent-board>p:not(.event-category):not(.event-date) {
+    grid-column: 2;
+    grid-row: 2;
+
+    align-self: start;
+
+    max-width: 700px;
+
+    margin: 0 0 15px;
+
+    color: #69766d;
+
+    font-size: 0.93rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   CATEGORY
+   ========================================= */
+
+.allevent-board .event-category {
+    grid-column: 2;
+    grid-row: 3;
+
+    align-self: end;
+    justify-self: start;
+
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    background: #e8f5ea;
+
+    border: 1px solid #d5e9d8;
+
+    border-radius: 20px;
+
+    color: #166534;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   DATE
+   ========================================= */
+
+.allevent-board .event-date {
+    grid-column: 3;
+    grid-row: 3;
+
+    align-self: end;
+    justify-self: end;
+
+    color: #68746c;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .allevent-section {
+        width: 90%;
+
+        margin-top: 45px;
+    }
+
+    .allevent-board {
+        grid-template-columns: 160px 1fr auto;
+
+        column-gap: 20px;
+
+        padding: 17px;
+    }
+
+    .allevent-board img {
+        width: 160px;
+        height: 130px;
+    }
+
+    .allevent-board h3 {
+        font-size: 1.2rem;
+    }
+
+    .allevent-board>p:not(.event-category):not(.event-date) {
+        font-size: 0.87rem;
+    }
+
+    .allevent-board .event-category,
+    .allevent-board .event-date {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .allevent-section {
+        width: 92%;
+
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+
+    .allevent-section .section-name {
+        font-size: 1.65rem;
+        margin-bottom: 22px;
+    }
+
+    .allevent-board {
+        min-height: 0;
+
+        grid-template-columns: 105px 1fr;
+        grid-template-rows: auto auto auto auto;
+
+        column-gap: 15px;
+
+        padding: 14px;
+
+        border-radius: 15px;
+    }
+
+    .allevent-board img {
+        width: 105px;
+        height: 110px;
+
+        grid-column: 1;
+        grid-row: 1 / 5;
+
+        border-radius: 10px;
+    }
+
+    .allevent-board h3 {
+        grid-column: 2;
+        grid-row: 1;
+
+        font-size: 1rem;
+
+        margin-top: 1px;
+        margin-bottom: 6px;
+    }
+
+    .allevent-board>p:not(.event-category):not(.event-date) {
+        grid-column: 2;
+        grid-row: 2;
+
+        font-size: 0.78rem;
+
+        line-height: 1.45;
+
+        margin-bottom: 8px;
+    }
+
+    .allevent-board .event-category {
+        grid-column: 2;
+        grid-row: 3;
+
+        justify-self: start;
+
+        font-size: 0.62rem;
+        padding: 5px 7px;
+
+        white-space: nowrap;
+    }
+
+    .allevent-board .event-date {
+        grid-column: 2;
+        grid-row: 3;
+
+        justify-self: end;
+        align-self: center;
+
+        font-size: 0.62rem;
+
+        white-space: nowrap;
+    }
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .allevent-board {
+        grid-template-columns: 90px 1fr;
+
+        column-gap: 12px;
+
+        padding: 12px;
+    }
+
+    .allevent-board img {
+        width: 90px;
+        height: 100px;
+    }
+
+    .allevent-board h3 {
+        font-size: 0.92rem;
+    }
+
+    .allevent-board>p:not(.event-category):not(.event-date) {
+        font-size: 0.73rem;
+    }
+
+    .allevent-board .event-category,
+    .allevent-board .event-date {
+        font-size: 0.65rem;
+    }
+}
+
+
+/* =========================================
+   EVENT META
+========================================= */
+
+.event-meta {
+    grid-column: 2;
+    grid-row: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    min-width: 0;
+}
+
+.event-meta .event-category {
+    padding: 6px 10px;
+
+    background: #e8f5ea;
+    border: 1px solid #d5e9d8;
+    border-radius: 20px;
+
+    color: #166534;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.event-meta .event-date {
+    color: #68746c;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .event-meta {
+        gap: 5px;
+    }
+
+    .event-meta .event-category {
+        padding: 5px 7px;
+        font-size: 0.62rem;
+    }
+
+    .event-meta .event-date {
+        font-size: 0.62rem;
+    }
+}

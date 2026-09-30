@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About US - College Event Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>COLLEGE EVENT MANAGER</h1>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav id="main-nav">
+            <a href="/" >Home</a>
+            <a href="/events">Events</a>
+            <a href="/about" class="active">About</a>
+            <a href="/contact">Contact Us</a>
+            {%if userin%}
+            <a href="/profile">Profile</a>
+            {%else%}
+            <a href="/signup">SignUp</a>
+            {%endif%}
+        </nav>
+    </header>
+
+    <section class="category-side-scroll">
+        <a href="">Technical</a>
+        <a href="">Cultural</a>
+        <a href="">Sports</a>
+        <a href="">Literature</a>
+        <a href="">Arts</a>
+        <a href="">Music & Dance</a>
+        <a href="">Workshops</a>
+        <a href="">Seminars</a>
+    </section>
+
+    <main>
+
+        <!-- INTRO -->
+        <section class="about-intro">
+
+            <span class="intro-label">ABOUT US</span>
+
+            <h1>Making College Events Easier to Discover</h1>
+
+            <p>
+                College Event Manager is a platform designed to bring
+                college events together in one place. From hackathons
+                and workshops to cultural activities and sports events,
+                students can easily discover what's happening around
+                their campus.
+            </p>
+
+        </section>
+
+
+        <!-- WHY -->
+        <section class="about-section">
+
+            <h2>Why We Built This</h2>
+
+            <p>
+                College event information is often scattered across
+                WhatsApp groups, social media, notice boards and
+                different college communities. Our platform brings
+                this information together in one convenient place.
+            </p>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="about-section">
+
+            <h2>What You Can Do</h2>
+
+            <!-- cards here -->
+            <div class="feature-card">
+                <h3>Discover Events</h3>
+                <p>Find upcoming events happening in your college and explore them by category.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Explore Categories</h3>
+                <p>Browse events based on your interests such as Hackathons, Sports, Cultural Activities, Workshops and
+                    more.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Stay Updated</h3>
+                <p>Keep track of important event dates, venues and other information.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Personalized Experience</h3>
+                <p>Your favourite categories can help the platform show events that match your interests.</p>
+            </div>
+
+
+
+        </section>
+
+
+        <!-- VISION -->
+        <section class="about-section">
+
+            <h2>Our Vision</h2>
+
+            <p>
+                Our vision is to create a connected college community
+                where students never miss an opportunity simply
+                because they didn't hear about it.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+
+
+    <footer>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+
+        <p>
+            Address: Lorem ipsum...
+        </p>
+
+        <p>
+            Email: xyz@gmail.com
+        </p>
+    </footer>
+    <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const header = document.querySelector("header");
+
+    menuToggle.addEventListener("click", () => {
+        header.classList.toggle("mobile-menu-open");
+
+        if (header.classList.contains("mobile-menu-open")) {
+            menuToggle.textContent = "✕";
+            menuToggle.setAttribute("aria-label", "Close menu");
+        } else {
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "Open menu");
+        }
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - College Event Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+</head>
+<body>
+
+    <form action="/login" method="POST" class="user_info">
+
+        <h1>Login Here</h1>
+        <!-- ROLL NUMBER -->
+
+        <label for="user_rollno">Roll No.</label>
+
+        <input type="text" id="user_rollno" name="user_rollno" placeholder="Enter your roll number" required>
+
+        <!-- YEAR -->
+
+        <label for="user_year">Year</label>
+
+        <select id="user_year" name="user_year" required>
+
+            <option value="" disabled selected>
+                Select your year
+            </option>
+
+            <option value="FY">
+                First Year
+            </option>
+
+            <option value="SY">
+                Second Year
+            </option>
+
+            <option value="TY">
+                Third Year
+            </option>
+
+        </select>
+
+        <!-- BRANCH -->
+
+        <label for="user_branch">Branch</label>
+
+        <select id="user_branch" name="user_branch" required>
+
+            <option value="" disabled selected>
+                Select your branch
+            </option>
+
+            <option value="BSC-IT">
+                BSC-IT
+            </option>
+
+            <option value="BSC-CS">
+                BSC-CS
+            </option>
+
+            <option value="LAW">
+                LAW
+            </option>
+
+            <option value="B.COM">
+                B.COM
+            </option>
+
+            <option value="B.ARTS">
+                B.ARTS
+            </option>
+
+            <option value="BSC">
+                BSC
+            </option>
+
+            <option value="BMS">
+                BMS
+            </option>
+
+        </select>
+
+        <!-- PASSWORD -->
+
+        <label for="user_pass">
+            Password
+        </label>
+
+        <input type="password" id="user_pass" name="user_pass" placeholder="Enter password" required>
+
+        <!-----Login Button ------->
+        <button type="submit">
+            Login
+        </button>
+
+        <div class="already-account">
+            <span>Dont have an account?</span>
+            <a href="/signup">SignUp</a>
+        </div>
+
+
+
+
+    </form>
+    
+</body>
+</html>

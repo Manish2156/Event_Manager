@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>COLLEGE EVENT MANAGER</h1>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav id="main-nav">
+            <a href="/" class="active">Home</a>
+            <a href="/events">Events</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact Us</a>
+            {%if userin%}
+            <a href="/profile">Profile</a>
+            {%else%}
+            <a href="/signup">SignUp</a>
+            {%endif%}
+        </nav>
+    </header>
+
+    <section class="category-side-scroll">
+        <a href="">Technical</a>
+        <a href="">Cultural</a>
+        <a href="">Sports</a>
+        <a href="">Literature</a>
+        <a href="">Arts</a>
+        <a href="">Music & Dance</a>
+        <a href="">Workshops</a>
+        <a href="">Seminars</a>
+    </section>
+
+    <main>
+        <div class="hero-slider">
+
+            {% if event01 %}
+            <section class="hero-section">
+                <a href="/eventpage/{{ event01.event_id }}">
+                    <div class="event-board">
+                        <img src="{{ url_for('static', filename=event01.image) }}" alt="{{ event01.title }}">
+
+                        <h2>{{ event01.title }}</h2>
+                        <p>{{ event01.description }}</p>
+                        <p>{{ event01.event_date }}</p>
+                    </div>
+                </a>
+            </section>
+            {% endif %}
+
+
+            {% if event02 %}
+            <section class="hero-section">
+                <a href="/eventpage/{{ event02.event_id }}">
+                    <div class="event-board">
+                        <img src="{{ url_for('static', filename=event02.image) }}" alt="{{ event02.title }}">
+
+                        <h2>{{ event02.title }}</h2>
+                        <p>{{ event02.description }}</p>
+                        <p>{{ event02.event_date }}</p>
+                    </div>
+                </a>
+            </section>
+            {% endif %}
+
+
+            {% if event03 %}
+            <section class="hero-section">
+                <a href="/eventpage/{{ event03.event_id }}">
+                    <div class="event-board">
+                        <img src="{{ url_for('static', filename=event03.image) }}" alt="{{ event03.title }}">
+
+                        <h2>{{ event03.title }}</h2>
+                        <p>{{ event03.description }}</p>
+                        <p>{{ event03.event_date }}</p>
+                    </div>
+                </a>
+            </section>
+            {% endif %}
+
+
+            {% if event04 %}
+            <section class="hero-section">
+                <a href="/eventpage/{{ event04.event_id }}">
+                    <div class="event-board">
+                        <img src="{{ url_for('static', filename=event04.image) }}" alt="{{ event04.title }}">
+
+                        <h2>{{ event04.title }}</h2>
+                        <p>{{ event04.description }}</p>
+                        <p>{{ event04.event_date }}</p>
+                    </div>
+                </a>
+            </section>
+            {% endif %}
+
+        </div>
+
+
+        {%if upcoming_events%}
+        <section class="event-section">
+
+            <h2 class="section-name">Upcoming Event</h2>
+            {% for event in upcoming_events%}
+            <a href="/eventpage/{{event.event_id}}">
+                <div class="event-card">
+                    <img src="{{ url_for('static', filename=event.image) }}" alt="{{event.title}}">
+                    <h3>{{event.title}}</h3>
+                    <p>{{event.event_date}}</p>
+                </div>
+            </a>
+            {%endfor%}
+
+
+        </section>
+        {%endif%}
+
+        {%if past_events%}
+        <section class="event-section">
+
+            <h2 class="section-name">Past Event</h2>
+            {% for event in past_events%}
+            <a href="/eventpage/{{event.event_id}}">
+                <div class="event-card">
+                    <img src="{{ url_for('static', filename=event.image) }}" alt="{{event.title}}">
+                    <h3>{{event.title}}</h3>
+                    <p>{{event.event_date}}</p>
+                </div>
+            </a>
+            {%endfor%}
+
+
+        </section>
+        {%endif%}
+
+    </main>
+
+    <footer>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+
+        <p>
+            Address: Lorem ipsum...
+        </p>
+
+        <p>
+            Email: xyz@gmail.com
+        </p>
+    </footer>
+    <script>
+        const slides = document.querySelectorAll(".hero-slider .hero-section");
+
+        let currentSlide = 0;
+
+        if (slides.length > 0) {
+            slides[currentSlide].classList.add("active");
+
+            setInterval(() => {
+                slides[currentSlide].classList.remove("active");
+
+                currentSlide++;
+
+                if (currentSlide >= slides.length) {
+                    currentSlide = 0;
+                }
+
+                slides[currentSlide].classList.add("active");
+
+            }, 5000);
+        }
+        const menuToggle = document.getElementById("menu-toggle");
+        const header = document.querySelector("header");
+
+        menuToggle.addEventListener("click", () => {
+            header.classList.toggle("mobile-menu-open");
+
+            if (header.classList.contains("mobile-menu-open")) {
+                menuToggle.textContent = "✕";
+                menuToggle.setAttribute("aria-label", "Close menu");
+            } else {
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-label", "Open menu");
+            }
+        });
+    </script>
+</body>
+
+
+
+</html>

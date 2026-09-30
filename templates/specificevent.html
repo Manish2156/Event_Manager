@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Details - College Event Manager</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='event.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>COLLEGE EVENT MANAGER</h1>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav id="main-nav">
+            <a href="/" class="active">Home</a>
+            <a href="/events">Events</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact Us</a>
+            {%if userin%}
+            <a href="/profile">Profile</a>
+            {%else%}
+            <a href="/signup">SignUp</a>
+            {%endif%}
+        </nav>
+    </header>
+
+
+    <!-- CATEGORY BAR -->
+
+    <section class="category-side-scroll">
+
+        <a href="">Technical</a>
+        <a href="">Cultural</a>
+        <a href="">Sports</a>
+        <a href="">Literature</a>
+        <a href="">Arts</a>
+        <a href="">Music & Dance</a>
+        <a href="">Workshops</a>
+        <a href="">Seminars</a>
+
+    </section>
+
+
+    <!-- EVENT DETAILS -->
+
+    <main>
+
+        <section class="event-info-page">
+
+            <!-- EVENT IMAGE -->
+
+            <div class="event-image">
+                <img src="{{ url_for('static', filename=event.image) }}" alt="{{event.title}}">
+            </div>
+
+
+            <!-- EVENT TITLE -->
+
+            <div class="event-heading">
+
+                <h1>
+                    {{event.title}}
+                </h1>
+
+
+            </div>
+
+
+            <!-- REMINDER -->
+            {% if reminder %}
+            <button class="reminder-btn" disabled>Reminder Set ✓</button>
+            {% else %}
+            <a class="reminder-btn"  href="/add-reminder/{{ event.event_id }}">
+                Set Reminder
+            </a>
+            {% endif %}
+
+
+            <!-- EVENT INFORMATION -->
+
+            <div class="event-details">
+
+                <div class="event-detail">
+
+                    <h3>Event Description</h3>
+
+                    <p>
+                        {{event.description}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Event Category</h3>
+
+                    <p>
+                        {{event.category}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Event Date and Time</h3>
+
+                    <p>
+                        {{event.event_date}} / {{event.event_time}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Contact Faculty</h3>
+
+                    <p>
+                        {{event.contact_faculty}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Venue</h3>
+
+                    <p>
+                        {{event.venue}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Duration</h3>
+
+                    <p>
+                        {{event.duration}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Joining Before Date</h3>
+
+                    <p>
+                        {{event.deadline}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+
+        <p>
+            Address: Lorem ipsum...
+        </p>
+
+        <p>
+            Email: xyz@gmail.com
+        </p>
+
+    </footer>
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const header = document.querySelector("header");
+
+        menuToggle.addEventListener("click", () => {
+            header.classList.toggle("mobile-menu-open");
+
+            if (header.classList.contains("mobile-menu-open")) {
+                menuToggle.textContent = "✕";
+                menuToggle.setAttribute("aria-label", "Close menu");
+            } else {
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-label", "Open menu");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

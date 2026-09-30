@@ -1,0 +1,480 @@
+/* =====================================================
+   ABOUT PAGE
+   ===================================================== */
+
+
+/* =========================================
+   ABOUT MAIN CONTAINER
+========================================= */
+
+main {
+    width: 100%;
+}
+
+
+/* =========================================
+   INTRO SECTION
+========================================= */
+
+.about-intro {
+    width: 86%;
+    max-width: 1050px;
+
+    margin: 75px auto 90px;
+
+    text-align: center;
+}
+
+
+/* Small "ABOUT US" label */
+
+.intro-label {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    background: #e4f3e7;
+
+    color: #166534;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* Main heading */
+
+.about-intro h1 {
+    max-width: 850px;
+
+    margin: 0 auto 22px;
+
+    color: #143d20;
+
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+}
+
+
+/* Intro paragraph */
+
+.about-intro p {
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    color: #66736a;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   GENERAL ABOUT SECTION
+========================================= */
+
+.about-section {
+    width: 86%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 90px;
+}
+
+
+/* Section heading */
+
+.about-section h2 {
+    margin-bottom: 20px;
+
+    color: #17351f;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* Green line underneath heading */
+
+.about-section h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 4px;
+
+    margin-top: 9px;
+
+    border-radius: 10px;
+
+    background: #22c55e;
+}
+
+
+/* Normal paragraph */
+
+.about-section > p {
+    max-width: 900px;
+
+    color: #66736a;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   WHY WE BUILT THIS
+========================================= */
+
+.about-section:nth-of-type(2) {
+    padding: 45px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf7ef,
+            #e2f1e5
+        );
+
+    border: 1px solid #d5e6d7;
+}
+
+
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+/* Make feature cards sit in a grid */
+
+.about-section:nth-of-type(3) {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Heading takes full width */
+
+.about-section:nth-of-type(3) h2 {
+    grid-column: 1 / -1;
+
+    margin-bottom: 5px;
+}
+
+
+/* Feature card */
+
+.feature-card {
+    position: relative;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e8e1;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(30, 70, 35, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Green accent on left */
+
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 25px;
+
+    width: 4px;
+    height: 45px;
+
+    border-radius: 0 5px 5px 0;
+
+    background: #22c55e;
+}
+
+
+/* Card hover */
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #bdd9c1;
+
+    box-shadow:
+        0 18px 38px rgba(30, 70, 35, 0.11);
+}
+
+
+/* Card heading */
+
+.feature-card h3 {
+    margin-bottom: 9px;
+
+    color: #174a27;
+
+    font-size: 1.15rem;
+
+    font-weight: 750;
+}
+
+
+/* Card paragraph */
+
+.feature-card p {
+    color: #748077;
+
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   VISION SECTION
+========================================= */
+
+.about-section:last-child {
+    position: relative;
+
+    padding: 65px 50px;
+
+    margin-bottom: 100px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #14532d,
+            #166534
+        );
+
+    box-shadow:
+        0 20px 45px rgba(22, 101, 52, 0.16);
+}
+
+
+/* Decorative circle */
+
+.about-section:last-child::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    top: -110px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* Another decorative circle */
+
+.about-section:last-child::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    bottom: -100px;
+    left: -50px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* Vision heading */
+
+.about-section:last-child h2 {
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 2rem;
+}
+
+
+.about-section:last-child h2::after {
+    margin-left: auto;
+    margin-right: auto;
+
+    background: #6ee790;
+}
+
+
+/* Vision text */
+
+.about-section:last-child p {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #d9edde;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .about-intro {
+        width: 90%;
+
+        margin-top: 60px;
+    }
+
+
+    .about-section {
+        width: 90%;
+    }
+
+
+    .about-section:nth-of-type(3) {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-section:nth-of-type(3) h2 {
+        grid-column: auto;
+    }
+
+
+    .about-section:nth-of-type(2) {
+        padding: 35px;
+    }
+
+
+    .about-section:last-child {
+        padding: 50px 30px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .about-intro {
+        margin-top: 45px;
+
+        margin-bottom: 65px;
+    }
+
+
+    .about-intro h1 {
+        font-size: 2.2rem;
+
+        letter-spacing: -0.8px;
+    }
+
+
+    .about-intro p {
+        font-size: 0.94rem;
+    }
+
+
+    .about-section {
+        width: 92%;
+
+        margin-bottom: 65px;
+    }
+
+
+    .about-section h2 {
+        font-size: 1.55rem;
+    }
+
+
+    .about-section:nth-of-type(2) {
+        padding: 28px 23px;
+
+        border-radius: 20px;
+    }
+
+
+    .feature-card {
+        padding: 25px;
+    }
+
+
+    .about-section:last-child {
+        padding: 45px 22px;
+
+        border-radius: 22px;
+
+        margin-bottom: 60px;
+    }
+
+
+    .about-section:last-child h2 {
+        font-size: 1.6rem;
+    }
+
+
+    .about-section:last-child p {
+        font-size: 0.92rem;
+    }
+}

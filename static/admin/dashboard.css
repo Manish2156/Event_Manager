@@ -1,0 +1,501 @@
+/* =========================================
+   ADMIN DASHBOARD
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: #f6f8f5;
+    color: #18301f;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    width: 100%;
+    height: 78px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e9e2;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+
+    color: #14532d;
+
+    font-size: 1.45rem;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    white-space: nowrap;
+}
+
+header nav a {
+    color: #405447;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+header nav a:hover {
+    color: #16a34a;
+}
+
+header nav a:last-child {
+    color: #b42318;
+}
+
+header nav a:last-child:hover {
+    color: #dc2626;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 86%;
+    max-width: 1100px;
+
+    margin: 55px auto 90px;
+}
+
+
+/* =========================================
+   DASHBOARD HEADING
+   ========================================= */
+
+main > h2 {
+    margin-bottom: 30px;
+
+    color: #17351f;
+
+    font-size: 2rem;
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+}
+
+main > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 4px;
+
+    margin-top: 9px;
+
+    border-radius: 10px;
+
+    background: #22c55e;
+}
+
+
+/* =========================================
+   STATS GRID
+   ========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================================
+   STATS CARD
+   ========================================= */
+
+.stats-card {
+    padding: 25px 27px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7df;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(35, 80, 45, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #b9d6bd;
+
+    box-shadow:
+        0 10px 25px rgba(35, 80, 45, 0.08);
+}
+
+.stats-card h3 {
+    margin-bottom: 13px;
+
+    color: #607066;
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stats-card h4 {
+    color: #174a27;
+
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   QUICK ACTIONS
+   ========================================= */
+
+.quick-actions {
+    margin-bottom: 50px;
+}
+
+.quick-actions h2,
+.recent h2 {
+    margin-bottom: 20px;
+
+    color: #17351f;
+
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+
+/* =========================================
+   QUICK BUTTONS
+   ========================================= */
+
+.quick-btns {
+    display: flex;
+
+    gap: 15px;
+}
+
+.quick-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    background: #166534;
+
+    border: 1px solid #166534;
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.quick-btn:hover {
+    background: #14532d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(22, 101, 52, 0.18);
+}
+
+
+/* =========================================
+   RECENT EVENTS
+   ========================================= */
+
+.recent {
+    width: 100%;
+}
+
+.recent-table {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe7df;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 5px 18px rgba(35, 80, 45, 0.05);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TABLE
+   ========================================= */
+
+.recent-table table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 600px;
+}
+
+.recent-table th {
+    padding: 16px 20px;
+
+    background: #edf5ee;
+
+    color: #31543b;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+
+    text-align: left;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    border-bottom: 1px solid #d9e5da;
+}
+
+.recent-table td {
+    padding: 17px 20px;
+
+    color: #526158;
+
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    border-bottom: 1px solid #edf1ed;
+}
+
+.recent-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.recent-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.recent-table tbody tr:hover {
+    background: #f8faf8;
+}
+
+.recent-table td:first-child {
+    color: #174a27;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 850px) {
+
+    header {
+        padding: 0 4%;
+    }
+
+    header nav {
+        gap: 18px;
+    }
+
+    header nav a {
+        font-size: 0.82rem;
+    }
+
+    main {
+        width: 90%;
+
+        margin-top: 45px;
+    }
+
+    .stats-grid {
+        gap: 16px;
+    }
+
+    .stats-card {
+        padding: 22px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    header {
+        height: auto;
+
+        padding: 18px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    header nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px 18px;
+    }
+
+    main {
+        width: 92%;
+
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+
+    main > h2 {
+        font-size: 1.65rem;
+
+        margin-bottom: 25px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-bottom: 38px;
+    }
+
+    .stats-card {
+        padding: 20px 22px;
+    }
+
+    .stats-card h4 {
+        font-size: 1.8rem;
+    }
+
+    .quick-actions {
+        margin-bottom: 40px;
+    }
+
+    .quick-actions h2,
+    .recent h2 {
+        font-size: 1.2rem;
+    }
+
+    .quick-btns {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .quick-btn {
+        width: 100%;
+    }
+
+    .recent-table {
+        border-radius: 13px;
+    }
+}
+
+
+/* =========================================
+   VERY SMALL SCREENS
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 1.1rem;
+    }
+
+    header nav {
+        gap: 8px 13px;
+    }
+
+    header nav a {
+        font-size: 0.75rem;
+    }
+
+    main > h2 {
+        font-size: 1.5rem;
+    }
+
+    .stats-card h3 {
+        font-size: 0.78rem;
+    }
+
+    .stats-card h4 {
+        font-size: 1.65rem;
+    }
+}

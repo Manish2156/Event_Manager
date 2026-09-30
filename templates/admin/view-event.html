@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Event Details - College Event Manager</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='event.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>COLLEGE EVENT MANAGER </h1>
+
+        <nav>
+            <a href="/admin/dashboard">Dashboard</a>
+            <a href="/admin/create-event">Create Event</a>
+            <a href="/admin/manage-event">Manage Events</a>
+            <a href="/admin/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+
+        <section class="event-info-page">
+
+            <!-- EVENT IMAGE -->
+
+            <div class="event-image">
+                <img src="{{ url_for('static', filename=event.image) }}" alt="{{event.title}}">
+            </div>
+
+
+            <!-- EVENT TITLE -->
+
+            <div class="event-heading">
+
+                <h1>
+                    {{event.title}}
+                </h1>
+
+
+            </div>
+
+
+            <!-- EVENT INFORMATION -->
+
+            <div class="event-details">
+
+                <div class="event-detail">
+
+                    <h3>Event Description</h3>
+
+                    <p>
+                        {{event.description}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Event Category</h3>
+
+                    <p>
+                        {{event.category}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Event Date and Time</h3>
+
+                    <p>
+                        {{event.event_date}} / {{event.event_time}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Contact Faculty</h3>
+
+                    <p>
+                        {{event.contact_faculty}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Venue</h3>
+
+                    <p>
+                        {{event.venue}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Duration</h3>
+
+                    <p>
+                        {{event.duration}}
+                    </p>
+
+                </div>
+
+
+                <div class="event-detail">
+
+                    <h3>Joining Before Date</h3>
+
+                    <p>
+                        {{event.deadline}}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+</body>
+
+</html>

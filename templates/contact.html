@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us - College Event Manager</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>COLLEGE EVENT MANAGER</h1>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <nav id="main-nav">
+            <a href="/" >Home</a>
+            <a href="/events">Events</a>
+            <a href="/about">About</a>
+            <a href="/contact" class="active">Contact Us</a>
+            {%if userin%}
+            <a href="/profile">Profile</a>
+            {%else%}
+            <a href="/signup">SignUp</a>
+            {%endif%}
+        </nav>
+    </header>
+
+
+    <!-- CATEGORY BAR -->
+
+    <section class="category-side-scroll">
+
+        <a href="">Technical</a>
+        <a href="">Cultural</a>
+        <a href="">Sports</a>
+        <a href="">Literature</a>
+        <a href="">Arts</a>
+        <a href="">Music & Dance</a>
+        <a href="">Workshops</a>
+        <a href="">Seminars</a>
+
+    </section>
+
+
+    <main>
+
+        <!-- INTRO -->
+
+        <section class="contact-intro">
+
+            <span class="intro-label">CONTACT US</span>
+
+            <h1>Let's Get in Touch</h1>
+
+            <p>
+                Have a question, suggestion or feedback?
+                We'd love to hear from you. Get in touch with
+                the College Event Manager team.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT CONTENT -->
+
+        <section class="contact-container">
+
+
+            <!-- CONTACT INFORMATION -->
+
+            <div class="contact-info">
+
+                <h2>Get in Touch</h2>
+
+                <p>
+                    Whether you have a question about an event,
+                    want to report an issue or have a suggestion,
+                    feel free to contact us.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <h3>Email</h3>
+
+                    <p>
+                        collegeeventmanager@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3>Location</h3>
+
+                    <p>
+                        Your College Name<br>
+                        Mumbai, Maharashtra
+                    </p>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <h3>Event Support</h3>
+
+                    <p>
+                        Need help with an event or registration?
+                        Send us a message and we'll get back to you.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="contact-form">
+
+                <h2>Send Us a Message</h2>
+
+                <form action="" method="POST">
+
+                    <label for="name">Name</label>
+
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+
+                    <label for="email">Email</label>
+
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+
+                    <label for="subject">Subject</label>
+
+                    <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+
+
+                    <label for="message">Message</label>
+
+                    <textarea id="message" name="message" placeholder="Write your message here..." rows="6"
+                        required></textarea>
+
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUICK HELP -->
+
+        <section class="contact-help">
+
+            <h2>How Can We Help?</h2>
+
+            <div class="help-cards">
+
+                <div class="help-card">
+                    <h3>Event Information</h3>
+
+                    <p>
+                        Found incorrect or outdated information
+                        about an event? Let us know.
+                    </p>
+                </div>
+
+
+                <div class="help-card">
+                    <h3>List an Event</h3>
+
+                    <p>
+                        Want to add your college event to the
+                        platform? Contact the event management team.
+                    </p>
+                </div>
+
+
+                <div class="help-card">
+                    <h3>Feedback</h3>
+
+                    <p>
+                        Have an idea that could make the platform
+                        better? We'd love to hear it.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+
+        <p>
+            Address: Lorem ipsum...
+        </p>
+
+        <p>
+            Email: xyz@gmail.com
+        </p>
+    </footer>
+
+    <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const header = document.querySelector("header");
+
+    menuToggle.addEventListener("click", () => {
+        header.classList.toggle("mobile-menu-open");
+
+        if (header.classList.contains("mobile-menu-open")) {
+            menuToggle.textContent = "✕";
+            menuToggle.setAttribute("aria-label", "Close menu");
+        } else {
+            menuToggle.textContent = "☰";
+            menuToggle.setAttribute("aria-label", "Open menu");
+        }
+    });
+</script>
+
+</body>
+
+</html>
